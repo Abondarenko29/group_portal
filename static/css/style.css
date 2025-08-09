@@ -228,6 +228,7 @@ body.dark .btn:hover {
     padding: 10px 0;
     text-align: center;
     font-size: 0.9rem;
+    bottom: 0px;
 }
 
 .footer .footer-content {
@@ -947,4 +948,12 @@ label:has(input[required])::after {
 
 .width-30 {
     width: 30% !important;
+}
+
+.black-or-white {
+    color: black !important;
+}
+
+body.dark .black-or-white {
+    color: white !important;
 }

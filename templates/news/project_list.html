@@ -9,7 +9,7 @@
             <h2>
                 <a href="{% url 'project_details' pk=project.pk %}">{{ project.name }}</a>
             </h2>
-            <small><a style="color: black;">{{ project.author.first_name }} {{ project.author.last_name }}</a></small>
+            <small><a class="black-or-white">{{ project.author.first_name }} {{ project.author.last_name }}</a></small>
             {% if project.author.portfolio.image.url is not None %}
                 <img width="15px" height="15px" src="{{ project.author.portfolio.image.url }}" class="user-image">
             {% else %}

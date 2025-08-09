@@ -41,14 +41,14 @@
         const isCollapsed = localStorage.getItem("sidebarCollapsed") !== "false";
         sidebar.classList.add("no-transition");
         mainContent.classList.add("no-transition");
-    
+
         if (isCollapsed) {
             sidebar.classList.add("collapsed");
             mainContent.style.marginLeft = "0px";
         } else {
             mainContent.style.marginLeft = "125px";
         }
-    
+
         setTimeout(() => {
             sidebar.classList.remove("no-transition");
             mainContent.classList.remove("no-transition");

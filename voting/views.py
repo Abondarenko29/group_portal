@@ -3,9 +3,11 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import Poll, Vote
 from .forms import VoteForm
 
+
 def poll_list(request):
     polls = Poll.objects.all().order_by('-created_at')
     return render(request, 'voting/poll_list.html', {'polls': polls})
+
 
 @login_required
 def poll_detail(request, poll_id):

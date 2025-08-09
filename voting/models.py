@@ -8,12 +8,14 @@ class Poll(models.Model):
     def __str__(self):
         return self.question
 
+
 class Choice(models.Model):
     poll = models.ForeignKey(Poll, on_delete=models.CASCADE, related_name='choices')
     text = models.CharField(max_length=255)
 
     def __str__(self):
         return self.text
+
 
 class Vote(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

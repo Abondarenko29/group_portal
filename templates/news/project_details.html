@@ -13,7 +13,7 @@
             {{ project.author.first_name }} {{ project.author.last_name }}</a>
     </small>
     {% if project.author.portfolio.image.url is not None %}
-        <img width="30px" height="30px" src="{{ portfolio.image.url }}" class="user-image">
+        <img width="30px" height="30px" src="{{ project.author.portfolio.image.url }}" class="user-image">
     {% else %}
         <img width="30px" height="30px" src="{% static 'img/no_photo.png' %}" class="user-image">
     {% endif %}
@@ -23,5 +23,14 @@
 <div>
     <p>{{ project.description }}</p>
 </div>
+<div class="empty"></div>
+{% for file in project.files.all %}
+    <div class="investment">
+        <img class="filetype" src="{{ file.get_image }}">
+        <div class="investment-text">
+            <a href="{{ file.media.url }}">{{ file.get_filename }}</a>
+        </div>
+    </div>
+{% endfor %}
 
 {% endblock %}
